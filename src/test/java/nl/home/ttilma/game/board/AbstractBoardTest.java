@@ -5,6 +5,11 @@ import nl.home.ttilma.game.piece.Piece;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * 
+ * @author Tsjisse Tilma
+ *
+ */
 public class AbstractBoardTest {
     @Test
     public void testInitialization() {

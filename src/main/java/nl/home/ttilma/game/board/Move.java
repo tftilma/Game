@@ -3,6 +3,11 @@ package nl.home.ttilma.game.board;
 import nl.home.ttilma.game.board.Position;
 import nl.home.ttilma.game.piece.Piece;
 
+/**
+ * 
+ * @author Tsjisse Tilma
+ *
+ */
 public class Move {
     private Position from;
     private Position to;
@@ -10,7 +15,7 @@ public class Move {
     private boolean capturing;
     private Piece<?> promotedPiece;
 
-    public Piece<?> getpromotedPiece() {
+    public Piece<?> getPromotedPiece() {
         return promotedPiece;
     }
 

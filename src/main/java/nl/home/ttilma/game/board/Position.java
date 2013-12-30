@@ -1,5 +1,10 @@
 package nl.home.ttilma.game.board;
 
+/**
+ * 
+ * @author Tsjisse Tilma
+ *
+ */
 public class Position {
     public static int COL_A = 0;
     public static int COL_B = 1;

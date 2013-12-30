@@ -6,6 +6,11 @@ import nl.home.ttilma.game.board.Color;
 import nl.home.ttilma.game.board.Move;
 import nl.home.ttilma.game.board.SimpleBoard;
 
+/**
+ * 
+ * @author Tsjisse Tilma
+ *
+ */
 public class SimplePiece extends AbstractPiece<SimpleBoard> implements Piece<SimpleBoard> {
 
     public SimplePiece(Color color) {

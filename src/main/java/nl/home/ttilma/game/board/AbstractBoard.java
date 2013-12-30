@@ -7,7 +7,11 @@ import java.util.List;
 import nl.home.ttilma.game.board.Field;
 import nl.home.ttilma.game.piece.Piece;
 
-public abstract class AbstractBoard {
+/**
+ * 
+ * @author Tsjisse Tilma
+ *
+ */public abstract class AbstractBoard implements Board {
     protected Field[][] fields;
     protected LinkedList<Piece<? extends AbstractBoard>> capturedPieces = 
         new LinkedList<Piece<? extends AbstractBoard>>(); 

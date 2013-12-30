@@ -1,5 +1,10 @@
 package nl.home.ttilma.game.board;
 
+/**
+ * 
+ * @author Tsjisse Tilma
+ *
+ */
 public enum Color {
     WHITE(1), BLACK(2);
 

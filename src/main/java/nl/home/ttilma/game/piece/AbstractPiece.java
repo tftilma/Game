@@ -2,6 +2,9 @@ package nl.home.ttilma.game.piece;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import nl.home.ttilma.game.board.AbstractBoard;
 import nl.home.ttilma.game.board.Color;
 import nl.home.ttilma.game.board.Field;
@@ -9,10 +12,17 @@ import nl.home.ttilma.game.board.Move;
 import nl.home.ttilma.game.board.MoveResult;
 import nl.home.ttilma.game.board.Position;
 
+/**
+ * 
+ * @author Tsjisse Tilma
+ *
+ */
 public abstract class AbstractPiece<B extends AbstractBoard> implements Piece<B> {
+    private static Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
     private boolean atInitialPosition;
     private Position position;
     private Color color;
+    private boolean captured;
 
     public AbstractPiece(Color color) {
         this.setColor(color);
@@ -59,7 +69,11 @@ public abstract class AbstractPiece<B extends AbstractBoard> implements Piece<B>
     
     public MoveResult tryMove(B board, int deltaX, int deltaY, boolean allowCapture, boolean allowMove) {
         Position fromPosition = getPosition();
-        Color myColor = board.getField(fromPosition).getPiece().getColor();
+        logger.debug("tryMove fromCol=" + fromPosition.getCol() + " fromRow=" + fromPosition.getRow());
+        Field f = board.getField(fromPosition);
+        Piece p = board.getField(fromPosition).getPiece();
+        Color myColor = p.getColor();
+        //Color myColor = board.getField(fromPosition).getPiece().getColor();
         int toCol = fromPosition.getCol() + deltaX; 
         int toRow = fromPosition.getRow() + deltaY; 
         if (toCol < 0 || toCol >= board.getMaxCol() ){
@@ -84,6 +98,7 @@ public abstract class AbstractPiece<B extends AbstractBoard> implements Piece<B>
             return MoveResult.INVALID; 
         } else {
             // true if allowed to capture 
+            logger.debug("capturing");
             if (allowCapture) {
                 return MoveResult.VALID_STOP;
             } else {
@@ -111,5 +126,13 @@ public abstract class AbstractPiece<B extends AbstractBoard> implements Piece<B>
                 factor++;
             }
         } while(result==MoveResult.VALID_CONT && factor <= maxFactor);
+    }
+
+    public void setCaptured(boolean captured) {
+        this.captured = captured;
+    }
+
+    public boolean isCaptured() {
+        return captured;
     }
 }
