@@ -7,7 +7,6 @@ import nl.home.ttilma.game.piece.Piece;
  * 
  * @author tft
  *
- * @param <B>
  */
 public class Field {
     private Piece<?> piece;

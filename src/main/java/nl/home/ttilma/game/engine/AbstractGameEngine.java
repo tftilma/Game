@@ -1,6 +1,9 @@
 package nl.home.ttilma.game.engine;
 
 import nl.home.ttilma.game.board.Board;
+import nl.home.ttilma.game.piece.AbstractPiece;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 /**
  * 
@@ -8,6 +11,8 @@ import nl.home.ttilma.game.board.Board;
  *
  */
 public abstract class AbstractGameEngine<B extends Board> {
+    private static Logger logger = LogManager.getLogger(AbstractPiece.class);
+
     private boolean compStarts;
     private boolean gameFinished = false;
     private B board;

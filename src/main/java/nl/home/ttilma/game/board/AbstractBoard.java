@@ -1,11 +1,10 @@
 package nl.home.ttilma.game.board;
 
+import nl.home.ttilma.game.piece.Piece;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import nl.home.ttilma.game.board.Field;
-import nl.home.ttilma.game.piece.Piece;
 
 /**
  * 

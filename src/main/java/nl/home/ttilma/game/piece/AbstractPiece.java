@@ -1,16 +1,11 @@
 package nl.home.ttilma.game.piece;
 
+import nl.home.ttilma.game.board.*;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import java.util.List;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import nl.home.ttilma.game.board.AbstractBoard;
-import nl.home.ttilma.game.board.Color;
-import nl.home.ttilma.game.board.Field;
-import nl.home.ttilma.game.board.Move;
-import nl.home.ttilma.game.board.MoveResult;
-import nl.home.ttilma.game.board.Position;
 
 /**
  * 
@@ -18,7 +13,7 @@ import nl.home.ttilma.game.board.Position;
  *
  */
 public abstract class AbstractPiece<B extends AbstractBoard> implements Piece<B> {
-    private static Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
+    private static Logger logger = LogManager.getLogger(AbstractPiece.class);
     private boolean atInitialPosition;
     private Position position;
     private Color color;
